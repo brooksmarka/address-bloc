@@ -40,8 +40,6 @@ class MenuController
         system "clear"
         view_entry_n
         main_menu
-        #ask for the entry number and display that entry to user
-        #if invalid then prompt user to enter a valid entry number
       when 6
         puts "Good-Bye"
         exit(0)
@@ -67,10 +65,11 @@ end
 def view_entry_n
   puts "Please enter entry number"
   entry_request = gets.to_i
-  if entry_request <= address_book.entries.count
-    puts "Your entry is:\n#{address_book.entries[entry_request-1]}"
+  if entry_request <= @address_book.entries.count
+    puts "Your entry is:\n#{@address_book.entries[entry_request-1]}"
   else
     puts "Try again. That entry number does not exist"
+    view_entry_n
   end
 end
 
