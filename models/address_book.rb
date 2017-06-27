@@ -19,6 +19,11 @@ require "csv"
     entries.insert(index, Entry.new(name, phone_number, email))
   end
 
+  def nuke_it
+    entries.clear
+    puts "Boom! All entries have been nuked"
+  end
+
   def import_from_csv(file_name)
     #implementation goes here
     csv_text = File.read(file_name)
