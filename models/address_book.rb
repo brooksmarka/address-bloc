@@ -29,4 +29,7 @@ require "csv"
       add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
     end
   end
+
+  def binary_search(name)
+  end
 end
